@@ -1,0 +1,460 @@
+/*Обнуление стилей*/
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+html,
+body {
+	height: 100%;
+   
+}
+body {
+	line-height: 1;
+   background-color: #000;
+	font-family: Roboto;
+	font-size: 16px;
+	text-rendering: optimizeLegibility;
+}
+input,
+button,
+textarea {
+	font-family: Roboto;
+	font-size: inherit;
+}
+button {
+	cursor: pointer;
+	color: inherit;
+	background-color: inherit;
+}
+a {
+	color: inherit;
+}
+a:link,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+[class$="__container"] {
+   margin: 0 auto;
+}
+
+/*Первый экран*/
+.main {
+   width: 100%;
+   height: 100dvh;
+   overflow: hidden;
+   position: relative;
+}
+
+.main::before,
+.main::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   width: 24%;
+   height: 100%;
+   z-index: 2;
+}
+
+.main::before {
+   left: 0;
+   background: -webkit-gradient(linear, left top, right top, color-stop(0.78%, #320B03), color-stop(0.79%, rgba(50, 11, 3, 0.98)), color-stop(101.3%, rgba(50, 11, 3, 0.00)));
+   background: -o-linear-gradient(left, #320B03 0.78%, rgba(50, 11, 3, 0.98) 0.79%, rgba(50, 11, 3, 0.00) 101.3%);
+   background: linear-gradient(90deg, #320B03 0.78%, rgba(50, 11, 3, 0.98) 0.79%, rgba(50, 11, 3, 0.00) 101.3%);
+}
+
+.main::after {
+   right: 0;
+   background: -webkit-gradient(linear, right top, left top, from(#320B03), color-stop(0.01%, rgba(50, 11, 3, 0.98)), to(rgba(50, 11, 3, 0.00)));
+   background: -o-linear-gradient(right, #320B03 0%, rgba(50, 11, 3, 0.98) 0.01%, rgba(50, 11, 3, 0.00) 100%);
+   background: linear-gradient(270deg, #320B03 0%, rgba(50, 11, 3, 0.98) 0.01%, rgba(50, 11, 3, 0.00) 100%);
+}
+
+.main__container {
+   max-width: 62.5rem;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   row-gap: 0.6rem;
+   position: relative;
+   z-index: 5;
+   color: #FFF;
+   height: 100%;
+}
+
+.main__boxes, 
+.main__logo {
+   overflow: hidden;
+   position: relative;
+}
+
+.main__boxes img, 
+.main__logo img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   -o-object-fit: cover;
+      object-fit: cover;
+}
+
+.main__logo {
+   width: 14.43vw;
+   aspect-ratio: 274/208;
+}
+
+.main__boxes {
+   width: 35.22vw;
+   aspect-ratio: 669/462;
+   margin-bottom: 0.4rem;
+}
+
+.main__title {
+   text-align: center;
+   font-family: Roboto Condensed;
+   font-size: clamp(1rem, 5vw, 2.63rem);
+   font-weight: 700;
+   margin-bottom: 0.9rem;
+}
+
+.main__subtitle {
+   text-align: center;
+   font-size: clamp(1rem, 2vw, 1.25rem);
+   line-height: 120%;
+}
+
+.main__fon {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   -o-object-fit: cover;
+      object-fit: cover;
+}
+
+.main__hero {
+   position: absolute;
+   bottom: 0;
+   z-index: 3;
+}
+
+.main__hero_man {
+   right: 0;
+   width: 35.7vw;
+}
+
+.main__hero_woman {
+   left: 0;
+   width: 30.4vw;
+}
+
+.main__glow {
+   position: absolute;
+   z-index: 4;
+   right: 0;
+   top: 0;
+   width: 100%;
+   height: 100vh;
+   background: url("./img/main/glow.png") center no-repeat;
+   mix-blend-mode: screen;
+}
+
+.main__blue-glow {
+   position: absolute;
+   z-index: 4;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 19%;
+   background: url("./img/main/blue-glow.png") center/cover no-repeat;
+}
+
+.main__gradient {
+   position: absolute;
+   z-index: 3;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 43%;
+   background: -webkit-gradient(linear, left bottom, left top, from(#320B03), color-stop(0.01%, rgba(50, 11, 3, 0.98)), to(rgba(50, 11, 3, 0.00)));
+   background: -o-linear-gradient(bottom, #320B03 0%, rgba(50, 11, 3, 0.98) 0.01%, rgba(50, 11, 3, 0.00) 100%);
+   background: linear-gradient(360deg, #320B03 0%, rgba(50, 11, 3, 0.98) 0.01%, rgba(50, 11, 3, 0.00) 100%);
+}
+/*Второй экран*/
+.set {
+   width: 100%;
+   position: relative;
+}
+
+.set__container {
+   height: 100%;
+   max-width: 1264px;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   position: relative;
+   z-index: 5;
+   padding: 55px 0;
+}
+
+.set__column {
+   -webkit-box-flex: 0;
+       -ms-flex: 0 0 50%;
+           flex: 0 0 50%;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: start;
+       -ms-flex-align: start;
+           align-items: flex-start;
+   gap: 35px;
+}
+
+.set__title {
+   color: #416DF4;
+   font-family: Roboto Condensed;
+   font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+   font-weight: 700;
+   line-height: 120%;
+}
+
+.set__table {
+   width: 100%;
+   text-align: center;
+   border-collapse: collapse;
+}
+
+tbody tr, th:nth-child(3), th:last-child {
+   background-color: rgba(0, 0, 0, 0.55);
+   border: 1px solid rgba(103, 29, 0, 0.48);
+}
+
+tbody {
+   color: #fff;
+}
+
+thead {
+   color: #671D00;
+}
+
+thead tr:last-child {
+   height: 9px;
+   background-color: transparent;
+   border: none;
+}
+
+th:first-child {
+   width: 11.7%;
+}
+
+th:nth-child(2) {
+   width: 42%;
+}
+
+th:nth-child(4) {
+   width: 11px;
+   background-color: transparent;
+   border: none;
+}
+
+td, th {
+   padding: 5px 0;
+}
+
+tr td:nth-child(2) {
+   text-align: left;
+   padding: 5px 20px;
+}
+
+th {
+   font-size: 0.75rem;
+}
+
+td {
+   font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+   background-color: transparent;
+   border: none;
+   height: 2px;
+}
+
+.set__box {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   gap: 36px;
+   -webkit-box-pack: start;
+       -ms-flex-pack: start;
+           justify-content: flex-start;
+   -webkit-box-align: end;
+       -ms-flex-align: end;
+           align-items: flex-end;
+}
+
+.set__image {
+   width: 12vw;
+   aspect-ratio: 227/282;
+   position: relative;
+}
+
+.set__image img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   -o-object-fit: cover;
+      object-fit: cover;
+}
+
+.set__action {
+   margin-bottom: 30px;
+}
+
+.set__price {
+   color: #FFF;
+   font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+   line-height: 120%;
+   margin-bottom: 1.1rem;
+}
+
+.button {
+   display: -webkit-inline-box;
+   display: -ms-inline-flexbox;
+   display: inline-flex;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   min-height: 2.5rem;
+   color: #000;
+   text-align: center;
+   font-size: 16px;
+   line-height: 120%;
+   padding: 0 37px;
+   background-color: #FCFF00;
+   border-radius: 7px;
+   -webkit-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+.button:hover {
+   content: "";
+   background-color: #416DF4;
+}
+
+.set__fon {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   -o-object-fit: cover;
+      object-fit: cover;
+}
+
+.set__blue-glow {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+
+.set__hero {
+   position: relative;
+   left: 0;
+   top: 50%;
+   width: 70%;
+   aspect-ratio: 1 / 1.86;
+}
+
+.set__hero::before {
+   content: "";
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   -webkit-transform: translate(-50%, -50%);
+       -ms-transform: translate(-50%, -50%);
+           transform: translate(-50%, -50%);
+   border: 1px solid #000;
+   opacity: 0.2;
+   background: #416DF4;
+   mix-blend-mode: lighten;
+   -webkit-filter: blur(100px);
+           filter: blur(100px);
+   width: 154%;
+   aspect-ratio: 1/1;
+}
+
+.set__hero img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   -o-object-fit: cover;
+      object-fit: cover;
+}
